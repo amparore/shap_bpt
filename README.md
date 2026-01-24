@@ -2,6 +2,8 @@
 # ShapBPT: Shapley Image Explanations via Data-Aware Binary Partition Trees
 ### A python library to compute Shapley image explanations with data-aware Binary Partition Trees
 
+#### Install: `pip install shap-bpt`
+
 ---
 
 ShapBPT is a Python library for generating **faithful, data-aware image explanations** based on **Owen values**, a structured variant of Shapley values.
@@ -194,7 +196,13 @@ It is also possible to use other stopping criteria, like the area of the regions
 
 ## Installation
 
-<!-- `ShapBPT` contains a `cython` module, that needs to be compiled separately, before installing. On Unix systems, run: -->
+The easiest way to use ShapBPT is by installing it through PyPI:
+```sh
+pip install shap-bpt
+```
+
+---
+You can also compile and install it from sources.
 Because ShapBPT includes a **Cython module**, compiling is required.
 
 ### Unix systems
