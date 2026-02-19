@@ -6,7 +6,7 @@ Install: `pip install shap-bpt`
 
 Paper: 
 - AAAI2026 Version (TO APPEAR)
-- [ArXiV version](cddd)
+- [ArXiV version](https://arxiv.org/abs/2602.07047)
 
 ---
 
