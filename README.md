@@ -71,10 +71,12 @@ The resulting explanation follows the morphological regions pre-identified by th
 
 ### Step 1. Define a masking function
 ShapBPT requires a function
+
 $$
   \nu: N \times H \times W \rightarrow B \times M
 $$
-that takes in input a set of N binary masks and returns model predictions.
+
+that takes in input a set of $N$ binary masks and returns model predictions.
 
 <!-- Consider a machine learning classifier $f$ with input
 $$
@@ -138,20 +140,18 @@ shap_values = explainer.explain_instance(eval_budget, method='BPT', batch_size=b
 
 ShapBPT evaluates the **Owen value** over a BPT coalition structure. 
 The library uses the formula
+
 $$
     \widehat{\Omega}_i(Q, T) = 
     \begin{cases}
-        \displaystyle
-        \frac{1}{2} \widehat{\Omega}_i(Q \cup T_{2},\, T_{1}{\downarrow}) \,+\,
-        \frac{1}{2} \widehat{\Omega}_i(Q,\, T_{1}{\downarrow}) \quad
-        & \text{if}~T{\downarrow} = \{T_{1},\, T_{2}\}
-        \\[4pt]
-        \widehat{\varphi}_i(Q, T)
-        & \text{otherwise}
-        \\
+        \frac{1}{2}\,\widehat{\Omega}_i(Q,T_1)\;+\;\frac{1}{2}\,\widehat{\Omega}_i(Q\cup T_2, T_1) 
+            & \text{if } T^{\downarrow}=\{T_1,T_2\},\\[4pt]
+        \frac{1}{|T|}\big(\nu(Q\cup T)-\nu(Q)\big) 
+            & \text{if $T$ is indivisible}
     \end{cases}
 $$
-where $i \in T_{1}$, and $\widehat{\varphi}_i(Q, T) ~=~ \frac{1}{|T|} \Delta_{T}(Q)$ is the uniform marginal distribution of $T$ w.r.t. $Q$. 
+
+assuming, without loss of generality, that $`i \in T_{1}`$. 
 
 This hierarchical structure is what makes ShapBPT **efficient**, especially compared to full Shapley enumeration.
 
