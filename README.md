@@ -144,8 +144,8 @@ The library uses the formula
 $$
     \widehat{\Omega}_i(Q, T) = 
     \begin{cases}
-        \frac{1}{2}\,\widehat{\Omega}_i(Q,T_1)\;+\;\frac{1}{2}\,\widehat{\Omega}_i(Q\cup T_2, T_1) 
-            & \text{if } T^{\downarrow}=\{T_1,T_2\}\\
+        \frac{1}{2} \widehat{\Omega}_i(Q,T_1) + \frac{1}{2} \widehat{\Omega}_i(Q\cup T_2, T_1) 
+            & \text{if } T^{\downarrow}=(T_1,T_2)\\
         \frac{1}{|T|}\big(\nu(Q\cup T)-\nu(Q)\big) 
             & \text{if $T$ is indivisible}
     \end{cases}
