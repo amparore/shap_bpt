@@ -1,8 +1,12 @@
 
-# ShapBPT: Shapley Image Explanations via Data-Aware Binary Partition Trees
+# ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 ### A python library to compute Shapley image explanations with data-aware Binary Partition Trees
 
-#### Install: `pip install shap-bpt`
+Install: `pip install shap-bpt`
+
+Paper: 
+- AAAI2026 Version (TO APPEAR)
+- [ArXiV version](cddd)
 
 ---
 
