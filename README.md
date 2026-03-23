@@ -5,8 +5,8 @@
 Install: `pip install shap-bpt`
 
 Paper: 
-- AAAI2026 Version (TO APPEAR)
-- [ArXiV version](https://arxiv.org/abs/2602.07047)
+- [AAAI2026 Version](https://ojs.aaai.org/index.php/AAAI/article/view/39699)
+- [arXiv version](https://arxiv.org/abs/2602.07047)
 
 ---
 
@@ -243,3 +243,18 @@ python setup.py clean --all
 
 - [ImageNet setup with BPT partitions](examples/ImageNET_BPT.ipynb)
 - [ImageNet setup, AA and BPT partitions](examples/ImageNET_BPT.ipynb)
+
+
+
+# How to Cite
+```
+@inproceedings{shapbpt2026aaai,
+  title={{ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees}},
+  author={Rashid, Muhammad and Amparore, Elvio G and Ferrari, Enrico and Verda, Damiano},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={30},
+  pages={25099--25107},
+  year={2026}
+}
+```
