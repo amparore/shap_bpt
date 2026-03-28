@@ -2,11 +2,16 @@
 # ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 ### A python library to compute Shapley image explanations with data-aware Binary Partition Trees
 
-Install: `pip install shap-bpt`
+**Python Package 📦** :
+-  PyPI: https://pypi.org/project/shap-bpt/
+-   Install: `pip install shap-bpt`
 
-Paper: 
+**Paper**: 
 - [AAAI2026 Version](https://ojs.aaai.org/index.php/AAAI/article/view/39699)
 - [arXiv version](https://arxiv.org/abs/2602.07047)
+
+**Results**:
+-   [Tests](https://github.com/rashidrao-pk/shap_bpt_tests)
 
 ---
 
@@ -242,19 +247,21 @@ python setup.py clean --all
 # Examples
 
 - [ImageNet setup with BPT partitions](examples/ImageNET_BPT.ipynb)
-- [ImageNet setup, AA and BPT partitions](examples/ImageNET_BPT.ipynb)
+- [ImageNet setup, AA and BPT partitions](examples/ImageNET_BPT_AA.ipynb)
 
 
 
-# How to Cite
+## 📖 Citation
+If you use this work in your research, please cite:
 ```
-@inproceedings{shapbpt2026aaai,
+@inproceedings{rashid2026shapbpt,
   title={{ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees}},
   author={Rashid, Muhammad and Amparore, Elvio G and Ferrari, Enrico and Verda, Damiano},
   booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
   volume={40},
   number={30},
   pages={25099--25107},
-  year={2026}
+  year={2026},
+  url={https://doi.org/10.1609/aaai.v40i30.39699}
 }
 ```
