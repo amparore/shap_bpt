@@ -30,18 +30,18 @@ A Binary Partition Tree is built bottom-up, starting from the individual pixels 
 
 In practice, the BPT hierarchy is used top-down, starting from the root cluster and splitting adaptively. ShapBPT uses the BPT hierarchy to generate feature attributions in the form of (Owen approximations) of the Shapley coefficients.
 
-.. list-table::
-   :align: center
+.. raw:: html
 
-   * - | **BPT**
-       |
-       | .. image:: ../_static/sequence_BPT.gif
-       |    :width: 300px
-
-     - | **AA**
-       |
-       | .. image:: ../_static/sequence_AA.gif
-       |    :width: 300px
+   <div style="display:flex; gap:20px; justify-content:center; align-items:flex-start;">
+     <div style="text-align:center;">
+       <p><strong>BPT</strong></p>
+       <img src="../_static/sequence_BPT.gif" width="300">
+     </div>
+     <div style="text-align:center;">
+       <p><strong>AA</strong></p>
+       <img src="../_static/sequence_AA.gif" width="300">
+     </div>
+   </div>
 
 Why Owen values?
 ----------------
