@@ -33,10 +33,15 @@ In practice, the BPT hierarchy is used top-down, starting from the root cluster 
 .. list-table::
    :align: center
 
-   * - .. image:: ../_static/sequence_BPT.gif
-         :width: 300px
-     - .. image:: ../_static/sequence_AA.gif
-         :width: 300px
+   * - | **BPT**
+       |
+       | .. image:: ../_static/sequence_BPT.gif
+       |    :width: 300px
+
+     - | **AA**
+       |
+       | .. image:: ../_static/sequence_AA.gif
+       |    :width: 300px
 
 Why Owen values?
 ----------------
