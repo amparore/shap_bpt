@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use ShapBPT in your research, please cite our AAAI 2026 paper and consider starring this repository."
+title: "ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees"
+version: 1.0.0
+date-released: 2026-01-01
+
+authors:
+
+* family-names: Rashid
+  given-names: Muhammad
+* family-names: Amparore
+  given-names: Elvio G.
+* family-names: Ferrari
+  given-names: Enrico
+* family-names: Verda
+  given-names: Damiano
+
+repository-code: "https://github.com/amparore/shap_bpt"
+url: "https://github.com/amparore/shap_bpt"
+
+preferred-citation:
+type: conference-paper
+title: "ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees"
+authors:
+- family-names: Rashid
+given-names: Muhammad
+- family-names: Amparore
+given-names: Elvio G.
+- family-names: Ferrari
+given-names: Enrico
+- family-names: Verda
+given-names: Damiano
+year: 2026
+conference: "Proceedings of the AAAI Conference on Artificial Intelligence"
+publisher: "AAAI"

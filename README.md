@@ -250,7 +250,6 @@ python setup.py clean --all
 - [ImageNet setup, AA and BPT partitions](examples/ImageNET_BPT_AA.ipynb)
 
 
-
 ## 📖 Citation
 If you use this work in your research, please cite:
 ```
@@ -265,3 +264,8 @@ If you use this work in your research, please cite:
   url={https://doi.org/10.1609/aaai.v40i30.39699}
 }
 ```
+
+## Code of Conduct
+
+This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).  
+By participating, you agree to uphold these standards.
