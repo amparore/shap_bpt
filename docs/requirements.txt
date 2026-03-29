@@ -1,5 +1,9 @@
+Cython
+numpy
 sphinx
 furo
 nbsphinx
+matplotlib
+tqdm
+scikit-image
 ipykernel
-pandoc
