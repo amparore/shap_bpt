@@ -6,3 +6,6 @@ Notebooks
 
    ImageNET_BPT
    ImageNET_BPT_AA
+   VisualizeBPT
+   minimal_examples
+   experiment_repo

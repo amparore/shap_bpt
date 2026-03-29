@@ -2,9 +2,9 @@ ShapBPT documentation
 =====================
 
 **ShapBPT** is a Python package for generating **data-aware image feature attributions**
-using Owen values over **Binary Partition Trees (BPTs)**. **ShapBPT** is **model-agnostic** and operates through a **masking function** interface, making it applicable to a wide range of **black-box** models.
-ShapBPT extends well known method `Shap <https://github.com/shap/shap>`_
-If you use ShapBPT in your research and enjoying, please consider citing our `AAAI-26 paper <https://arxiv.org/abs/2602.07047>`_:
+using Owen values over **Binary Partition Trees (BPTs)**. 
+**ShapBPT** is **model-agnostic** and operates through a **masking function** interface, making it applicable to a wide range of **black-box** models.
+ShapBPT extends well known method `Shap <https://github.com/shap/shap>`_. If you use ShapBPT in your research and enjoying, please consider citing our `AAAI-26 paper <https://arxiv.org/abs/2602.07047>`_:
 
 .. code-block:: bibtex
 
@@ -18,14 +18,13 @@ If you use ShapBPT in your research and enjoying, please consider citing our `AA
    year={2026},
    url={https://doi.org/10.1609/aaai.v40i30.39699}
    }
----
+
 
 **HOW IT WORKS and Comparison with Shap-AxisAligned**
 
 .. image:: _static/docs_files-header_image.png
    :width: 600px
    :align: center
-
 
 
 🚀 Key Features
@@ -37,10 +36,9 @@ If you use ShapBPT in your research and enjoying, please consider citing our `AA
 * Axis-aligned baseline (AA) for comparison
 * Supports real-world pipelines (ImageNet, detection, anomaly detection)
 
----
 
 ⚡ Quick example
----------------
+----------------
 
 .. code-block:: python
 
@@ -55,7 +53,6 @@ If you use ShapBPT in your research and enjoying, please consider citing our `AA
 
    shap_bpt.plot_owen_values(explainer, shap_values, class_names)
 
----
 
 📦 Installation
 ---------------
@@ -63,8 +60,7 @@ If you use ShapBPT in your research and enjoying, please consider citing our `AA
 .. code-block:: bash
 
    pip install shap-bpt
-
----
+   
 
 Why ShapBPT? Key Advantages
 ---------------------------
@@ -103,7 +99,7 @@ data-aware partitioning of the input space tailored for images.
   the same interface.
 
 📚 Documentation Overview
-------------------------
+-------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -127,10 +123,10 @@ data-aware partitioning of the input space tailored for images.
 
 .. toctree::
    :maxdepth: 2
-   :caption: API examples
+   :caption: Additional pages
 
-   api_examples/imagenet_bpt
-   api_examples/imagenet_aa
+   plotting
+
 
 .. toctree::
    :maxdepth: 2

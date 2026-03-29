@@ -28,15 +28,13 @@ exclude_patterns = []
 
 nb_execution_mode = "off"
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 autosummary_generate = True
 
 html_theme = "furo"
 html_title = "ShapBPT"
 
 html_static_path = ["_static"]
-# html_logo = "_static/logo.png"
+
 html_favicon = "_static/logo.png"
 
 html_context = {

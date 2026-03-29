@@ -8,8 +8,4 @@ parameters, computation, and visualization.
    :maxdepth: 1
 
    theory
-   creating_an_explainer
-   parameters
-   computing_explanations
-   selected_arguments
-   plotting_explanations
+   explainer

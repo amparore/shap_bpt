@@ -121,5 +121,5 @@ To compare against a standard hierarchical baseline, use:
 -------------
 
 * See :doc:`notebooks/index` for full notebook examples
-* Explore :doc:`theory` for the Owen-value formulation
+* Explore :doc:`explainer/theory` for the Owen-value formulation
 * Check :doc:`api` for detailed API documentation

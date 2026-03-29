@@ -34,7 +34,7 @@ Parameters
    Enables progress reporting.
 
 Computing explanations
----------------
+----------------------
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ Computing explanations
    )
 
 Selected arguments
----------------
+------------------
 
 ``max_evals``
    Budget controlling how many masked evaluations are used.
