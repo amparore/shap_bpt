@@ -2,7 +2,39 @@
 # ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 ### A python library to compute Shapley image explanations with data-aware Binary Partition Trees
 
-**Python Package 📦** :
+<p align="center">
+
+<a href="https://arxiv.org/abs/2602.07047"><img src="https://img.shields.io/badge/arXiv-2602.07047-b31b1b.svg" alt="arXiv"></a>
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/39699"><img src="https://img.shields.io/badge/AAAI-2026-blue" alt="AAAI 2026"></a>
+<a href="https://pypi.org/project/shap-bpt/"><img src="https://img.shields.io/pypi/v/shap-bpt" alt="PyPI Version"></a>
+<a href="https://pypi.org/project/shap-bpt/"><img src="https://img.shields.io/pypi/dm/shap-bpt" alt="PyPI Downloads"></a>
+<a href="https://github.com/amparore/shap_bpt/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
+<a href="https://github.com/amparore/shap_bpt/graphs/contributors"><img src="https://img.shields.io/github/contributors/amparore/shap_bpt" alt="GitHub contributors"></a>
+<a href="https://github.com/amparore/shap_bpt"><img src="https://img.shields.io/github/repo-size/amparore/shap_bpt" alt="GitHub repo size"></a>
+<a href="https://github.com/amparore/shap_bpt/commits/main"><img src="https://img.shields.io/github/commit-activity/t/amparore/shap_bpt" alt="GitHub commit activity"></a>
+<a href="https://github.com/amparore/shap_bpt/commits/main"><img src="https://img.shields.io/github/last-commit/amparore/shap_bpt" alt="GitHub last commit"></a>
+</p>
+
+## 📦 Availability
+
+| Resource | Link |
+|---|---|
+| 📘 AAAI Proceedings | https://ojs.aaai.org/index.php/AAAI/article/view/39699 |
+| 📄 arXiv Paper | https://arxiv.org/abs/2602.07047 |
+| 🧠 Main ShapBPT Library | https://github.com/amparore/shap_bpt |
+| 🧪 Experiments Repository | https://github.com/rashidrao-pk/shap_bpt_tests |
+| 📚 Technical Appendix | https://zenodo.org/records/17570695 |
+| 📦 PyPI Package | https://pypi.org/project/shap-bpt/ |
+| Documentation | https://shapbpt.readthedocs.io |
+
+Install from PyPI:
+
+```bash
+pip install shap-bpt
+```
+
+
+<!-- **Python Package 📦** :
 -  PyPI: https://pypi.org/project/shap-bpt/
 -   Install: `pip install shap-bpt`
 
@@ -12,6 +44,9 @@
 
 **Results**:
 -   [Tests](https://github.com/rashidrao-pk/shap_bpt_tests)
+
+**Documentation**: 
+-   https://shapbpt.readthedocs.io -->
 
 ---
 
