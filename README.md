@@ -25,7 +25,7 @@
 | 🧪 Experiments Repository | https://github.com/rashidrao-pk/shap_bpt_tests |
 | 📚 Technical Appendix | https://zenodo.org/records/17570695 |
 | 📦 PyPI Package | https://pypi.org/project/shap-bpt/ |
-| Documentation | https://shapbpt.readthedocs.io |
+| 📄 Documentation | https://shapbpt.readthedocs.io |
 
 Install from PyPI:
 
