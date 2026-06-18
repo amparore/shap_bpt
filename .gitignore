@@ -20,6 +20,8 @@ dist/
 *.pyd
 *.dll
 *.dylib
+*.c
+
 
 # Testing
 .pytest_cache/
