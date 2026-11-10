@@ -24,11 +24,26 @@ extensions = [
 ]
 
 templates_path = ['_templates']
-exclude_patterns = []
+exclude_patterns = [
+    # the demos' assets and the scripts that computed them are not pages
+    "demos/*/assets",
+    "demos/*/compute",
+    "demos/*/README.md",
+]
 
 nb_execution_mode = "off"
 
 autosummary_generate = True
+
+# -- Demos (demos/) --------------------------------------------------------------------------------
+# Interactive pages computed once with ShapBPT: one folder per demo, with its page, its assets
+# (copied to _static/demos/<name>/) and the scripts that computed its data. The shapbpt-demo
+# directive of _ext/shapbpt_demos.py embeds a demo in a page; see demos/README.md.
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "_ext"))
+extensions.append("shapbpt_demos")
 
 html_theme = "furo"
 html_title = "ShapBPT"

@@ -1,0 +1,351 @@
+/* The ShapBPT demo (see demo.js). Colours come from Furo's variables, with fallbacks for pages
+   without Furo, so that the demo follows the docs' light and dark themes. */
+
+.shapbpt-demo {
+  --sb-fg: var(--color-foreground-primary, #1d2128);
+  --sb-muted: var(--color-foreground-secondary, #5a6170);
+  --sb-bg: var(--color-background-primary, #fff);
+  --sb-panel: var(--color-background-secondary, #f6f7f9);
+  --sb-border: var(--color-background-border, #e2e5ea);
+  --sb-accent: var(--color-brand-primary, #2962ff);
+  --sb-a: #ff9f00;
+  --sb-b: #00b7ff;
+  --sb-pos: rgb(214, 39, 40);
+  --sb-neg: rgb(31, 119, 180);
+  color: var(--sb-fg);
+  background: var(--sb-panel);
+  border: 1px solid var(--sb-border);
+  border-radius: 14px;
+  padding: 14px;
+  margin: 1.2rem 0 1.6rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  min-height: 300px;
+}
+.shapbpt-demo-failed,
+.shapbpt-demo:not(.shapbpt-demo-ready) {
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 0;
+}
+.shapbpt-demo img.shapbpt-demo-fallback,
+.shapbpt-demo-failed img {
+  width: 100%;
+  height: auto;
+}
+.shapbpt-demo-loading {
+  cursor: progress;
+}
+.shapbpt-demo-loading .shapbpt-demo-body {
+  opacity: 0.5;
+}
+.shapbpt-demo button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.shapbpt-demo-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: 0;
+}
+
+/* header: photos and prediction */
+.shapbpt-demo-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.shapbpt-demo-photos {
+  display: flex;
+  gap: 6px;
+}
+.shapbpt-demo-photo {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: none;
+  line-height: 0;
+  opacity: 0.6;
+  transition: opacity 150ms, border-color 150ms;
+}
+.shapbpt-demo-photo img {
+  width: 44px;
+  height: 44px;
+  border-radius: 7px;
+  display: block;
+}
+.shapbpt-demo-photo:hover,
+.shapbpt-demo-photo[aria-pressed="true"] {
+  opacity: 1;
+}
+.shapbpt-demo-photo[aria-pressed="true"] {
+  border-color: var(--sb-accent);
+}
+.shapbpt-demo-prediction {
+  margin: 0;
+  flex: 1 1 16rem;
+  color: var(--sb-muted);
+}
+.shapbpt-demo-prediction strong {
+  color: var(--sb-fg);
+}
+
+/* tabs */
+.shapbpt-demo-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  background: var(--sb-bg);
+  border: 1px solid var(--sb-border);
+  border-radius: 999px;
+  margin-bottom: 14px;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.shapbpt-demo-tab {
+  border: 0;
+  background: none;
+  border-radius: 999px;
+  padding: 5px 13px;
+  white-space: nowrap;
+  color: var(--sb-muted) !important;
+}
+.shapbpt-demo-tab[aria-selected="true"] {
+  background: var(--sb-accent);
+  color: #fff !important;
+}
+
+/* stage: the picture and the side panel */
+.shapbpt-demo-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .shapbpt-demo-stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.shapbpt-demo-frame {
+  position: relative;
+  margin: 0;
+}
+.shapbpt-demo-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: var(--sb-border);
+  touch-action: none;
+  outline-offset: 2px;
+}
+.shapbpt-demo-frame[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+.shapbpt-demo-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+.shapbpt-demo-text,
+.shapbpt-demo-status,
+.shapbpt-demo-info,
+.shapbpt-demo-legend {
+  margin: 0;
+}
+.shapbpt-demo-text {
+  color: var(--sb-muted);
+}
+.shapbpt-demo-info {
+  min-height: 3em;
+}
+.shapbpt-demo-hint {
+  color: var(--sb-muted);
+}
+.shapbpt-demo-key {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #111;
+}
+.shapbpt-demo-key-a {
+  background: var(--sb-a);
+}
+.shapbpt-demo-key-b {
+  background: var(--sb-b);
+}
+
+/* controls */
+.shapbpt-demo-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.shapbpt-demo-play {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 50%;
+  border: 0;
+  background: var(--sb-accent);
+  color: #fff !important;
+  font-size: 0.9rem;
+}
+.shapbpt-demo-slider {
+  flex: 1 1 14rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.shapbpt-demo-slider-label {
+  color: var(--sb-muted);
+  white-space: nowrap;
+}
+.shapbpt-demo-slider input {
+  flex: 1;
+  accent-color: var(--sb-accent);
+  min-width: 0;
+}
+.shapbpt-demo-toggle {
+  display: flex;
+  border: 1px solid var(--sb-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.shapbpt-demo-toggle button {
+  border: 0;
+  background: var(--sb-bg);
+  padding: 5px 10px;
+}
+.shapbpt-demo-toggle button[aria-pressed="true"] {
+  background: var(--sb-fg);
+  color: var(--sb-bg) !important;
+}
+
+/* the icicle */
+.shapbpt-demo-icicle-box {
+  margin: 0;
+}
+.shapbpt-demo-icicle {
+  display: block;
+  width: 100%;
+  height: 150px;
+  background: var(--sb-bg);
+  border-radius: 8px;
+}
+.shapbpt-demo-icicle rect {
+  transition: opacity 120ms;
+  cursor: pointer;
+}
+.shapbpt-demo-icicle rect.shapbpt-demo-unmerged {
+  opacity: 0.2;
+}
+.shapbpt-demo-icicle rect.shapbpt-demo-onpath {
+  stroke: var(--sb-fg);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  opacity: 1;
+}
+.shapbpt-demo-icicle rect.shapbpt-demo-next {
+  stroke: var(--sb-a);
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+  opacity: 1;
+}
+.shapbpt-demo-icicle-box figcaption,
+.shapbpt-demo-frame figcaption {
+  font-size: 0.8rem;
+  color: var(--sb-muted);
+  margin-top: 4px;
+}
+
+/* the four inputs of a split */
+.shapbpt-demo-quad {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.shapbpt-demo-quad-cell {
+  margin: 0;
+  transition: opacity 150ms;
+}
+.shapbpt-demo-quad-cell canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  display: block;
+  border-radius: 7px;
+}
+.shapbpt-demo-quad-cell figcaption {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-top: 2px;
+  color: var(--sb-muted);
+}
+.shapbpt-demo-quad-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--sb-fg);
+  font-weight: 600;
+}
+.shapbpt-demo-quad-empty {
+  opacity: 0.25;
+}
+.shapbpt-demo-legend {
+  font-size: 0.8rem;
+  color: var(--sb-muted);
+}
+.shapbpt-demo-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+.shapbpt-demo-swatch-pos {
+  background: var(--sb-pos);
+}
+.shapbpt-demo-swatch-neg {
+  background: var(--sb-neg);
+}
+
+/* BPT vs grid */
+.shapbpt-demo-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+.shapbpt-demo-pair .shapbpt-demo-status {
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+@media (max-width: 520px) {
+  .shapbpt-demo-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

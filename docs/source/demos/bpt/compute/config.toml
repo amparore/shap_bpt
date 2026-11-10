@@ -1,0 +1,18 @@
+# The demo's photos (from ShapBPT's examples/) and the explainer's budget, in model evaluations.
+classes = "photos/imagenet_class_index.json"
+budget = 1500
+
+[[photos]]
+id = "flamingo"
+file = "photos/flamingo4.png"
+title = "Flamingos"
+
+[[photos]]
+id = "bird"
+file = "photos/bird4.png"
+title = "A bird"
+
+[[photos]]
+id = "guitar"
+file = "photos/acoustic_guitar.png"
+title = "An acoustic guitar"

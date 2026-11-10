@@ -110,6 +110,12 @@ data-aware partitioning of the input space tailored for images.
    masking_function
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Demos
+
+   demos/bpt/index
+
+.. toctree::
    :maxdepth: 2
    :caption: User guide
 
